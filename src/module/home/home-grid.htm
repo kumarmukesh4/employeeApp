@@ -1,0 +1,47 @@
+<div class="row" ng-if="!groupBycat">
+    
+<div class="col-lg-6 profile-box" ng-repeat="item in empdata | orderBy: empcat | filter: searchTxt">
+        <div class="panel panel-default">
+          <div class="panel-body">
+              <div class="profile-header">
+               <img src="https://www.kevinleary.net/wp-content/uploads/Mark_Zuckerberg_at_the_37th_G8_Summit_in_Deauville_018_v1-100x100.jpg" alt="Mark Zuckerberg, Founder" class="img-circle">
+              </div>
+              <div class="profile-content">
+                <h3>{{item.title}} {{item.name}} {{item.surname}} </h3>
+                <p>Email: {{item.email}}</p>  
+                <p>DOB: {{item.dob}}</p>  
+                <p>Joining Date: {{item.joining_date}}</p>    
+                <p>Last Employer: {{item.last_employer}}</p>  
+                <p>Department: {{item.department}}</p>  
+              </div>
+              <div class="profile-footer">
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" ng-if="groupBycat">
+<div class="col-lg-12 profile-box" ng-repeat="(key, value) in empdata | orderBy: empcat | filter: searchTxt |  groupBy: groupBycat" >
+        
+        <h1>{{key}}</h1>
+  
+        <div class="col-lg-6  panel panel-default" ng-repeat="item in value">
+          <div class="panel-body">
+              <div class="profile-header">
+               <img src="https://www.kevinleary.net/wp-content/uploads/Mark_Zuckerberg_at_the_37th_G8_Summit_in_Deauville_018_v1-100x100.jpg" alt="Mark Zuckerberg, Founder" class="img-circle">
+              </div>
+              <div class="profile-content">
+                <h3>{{item.title}} {{item.name}} {{item.surname}} </h3>
+                <p>Email: {{item.email}}</p>  
+                <p>DOB: {{item.dob}}</p>  
+                <p>Joining Date: {{item.joining_date}}</p>    
+                <p>Last Employer: {{item.last_employer}}</p>  
+                <p>Department: {{item.department}}</p>  
+              </div>
+              <div class="profile-footer">
+              </div>
+          </div>
+        </div>
+    </div>
+</div>

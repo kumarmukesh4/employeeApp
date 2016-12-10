@@ -1,0 +1,40 @@
+body {
+  marign: 0;
+  padding: 0;
+}
+header {
+  position: fixed;
+  top: 0;
+  width: 70%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+.profile-box {
+  position: relative;
+}
+.profile-box .profile-header {
+  position: absolute;
+  top: 0;
+}
+.profile-box .profile-header img {
+  float: left;
+}
+.profile-box .profile-content {
+  font-size: 14px;
+  line-height: 1.4em;
+  margin: 0 0 0 125px;
+  padding: 27px 20px 0 0;
+}
+.profile-box .profile-content h3 {
+  margin: 0;
+}
+.profile-box .profile-content p {
+  font-size: 1.3em;
+  line-height: 100%;
+  margin: 3px 0 20px;
+}
+.change-view {
+  margin: 10px 0;
+}

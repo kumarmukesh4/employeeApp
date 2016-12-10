@@ -1,0 +1,46 @@
+<div class="row text-right">
+    <button class="btn btn-default">Add Employee</button>
+</div>
+
+
+<div class="intro">
+    <h2>Meet The Team</h2>
+    <p class="lead">“Individuals can and do make a difference, but it takes a team<br>to really mess things up.”</p>
+</div>
+
+
+
+<div class="row">
+    <div class="col-lg-6 sort-by">
+        <label>Sort By: </label>
+        <select ng-model="empcat" ng-options="key for (key, value) in sortByArr">
+            <!--<option ng-repeat="(key, value) in sortByArr" value={{value}}>{{key}}</option>-->
+            <!--ng-options="key as value for (key, value) in sortByArr"-->
+             <option value="">Sort by</option>
+        </select>
+    </div>
+    <div class="col-lg-6">
+        <label>Group By: </label>
+        <input type="radio" ng-model="groupBycat" name="gorupby" value="" />  Reset 
+        <input type="radio" ng-model="groupBycat" name="gorupby" value="title" />  Title 
+        <input type="radio" ng-model="groupBycat" name="gorupby" value="department" />  Department 
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <input type="text" placeholder="Search Employee" style="width: 60%; margin: auto" ng-model="searchTxt" />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12 text-right change-view"><a ui-sref="home.grid">Grid</a> | <a ui-sref="home.list">List</a></div>
+</div>
+
+<div ui-view="emp-list"></div>
+
+
+
+
+
+

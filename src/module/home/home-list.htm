@@ -1,0 +1,32 @@
+<div class="row" ng-if="!groupBycat">
+<div class="panel panel-default" ng-repeat="item in empdata | orderBy: empcat | filter: searchTxt">
+   <div class="panel-body">
+       <div class="col-lg-2"><img src="https://www.kevinleary.net/wp-content/uploads/Mark_Zuckerberg_at_the_37th_G8_Summit_in_Deauville_018_v1-100x100.jpg" alt="Mark Zuckerberg, Founder" class="img-circle">  {{item.title}} {{item.name}} {{item.surname}}
+       </div>     
+        <div class="col-lg-2">{{item.email}}</div>   
+       <div class="col-lg-2">{{item.dob}}</div>   
+       <div class="col-lg-2">{{item.joining_date}}</div>   
+       <div class="col-lg-2">{{item.last_employer}}</div>   
+       <div class="col-lg-2">{{item.department}}</div>   
+   </div>       
+</div>
+</div>
+
+
+
+<div class="row" ng-if="groupBycat">
+<div  ng-repeat="(key, value) in empdata | orderBy: empcat | filter: searchTxt |  groupBy: groupBycat">
+   <h1>{{key | uppercase}}</h1>  
+  <div class="panel panel-default" ng-repeat="item in value">    
+       <div class="panel-body">
+           <div class="col-lg-2"><img src="https://www.kevinleary.net/wp-content/uploads/Mark_Zuckerberg_at_the_37th_G8_Summit_in_Deauville_018_v1-100x100.jpg" alt="Mark Zuckerberg, Founder" class="img-circle">  {{item.title}} {{item.name}} {{item.surname}}
+           </div>     
+            <div class="col-lg-2">{{item.email}}</div>   
+           <div class="col-lg-2">{{item.dob}}</div>   
+           <div class="col-lg-2">{{item.joining_date}}</div>   
+           <div class="col-lg-2">{{item.last_employer}}</div>   
+           <div class="col-lg-2">{{item.department}}</div>   
+       </div> 
+  </div>      
+</div>
+</div>    
